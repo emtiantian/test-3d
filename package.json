@@ -1,0 +1,17 @@
+{
+  "name": "test-3d",
+  "version": "1.0.0",
+  "description": "3d展示测试",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test-3d"
+  ],
+  "author": "hao503106@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
