@@ -59,9 +59,9 @@
         45,
         window.innerWidth / window.innerHeight,
         1,
-        2000
+        20000
       )
-      camera.position.z = 250
+      camera.position.z = 5000
       // scene
       scene = new THREE.Scene()
       var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4)
@@ -74,6 +74,7 @@
         object.traverse(function (child) {
           if (child.isMesh) child.material.map = texture
         })
+        object.center();
         scene.add(object)
       }
       // var manager = new THREE.LoadingManager(loadModel)
@@ -85,13 +86,13 @@
       // 加载材质及模型
       new THREE.MTLLoader()
         .setPath('./assets/')
-        .load('car.mtl', function (materials) {
+        .load('car1.mtl', function (materials) {
           materials.preload()
           new THREE.OBJLoader()
             .setMaterials(materials)
             .setPath('./assets/')
             .load(
-              'car.obj',
+              'car1.obj',
               function (object) {
                 scene.add(object)
               },
