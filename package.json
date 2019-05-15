@@ -12,6 +12,12 @@
   "author": "hao503106@163.com",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "three.js": "^0.77.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@10.0.53.138:haohe/test-3d.git"
   }
 }
