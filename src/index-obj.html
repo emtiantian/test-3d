@@ -60,8 +60,7 @@
         45,
         window.innerWidth / window.innerHeight,
         1,
-        100000,
-        0.5
+        100000
       )
       camera.position.x = -4000
       camera.position.y = 4000
@@ -69,10 +68,18 @@
       // camera.lookAt( new THREE.Vector3(200,300,1000))
       // scene
       scene = new THREE.Scene()
-      var ambientLight = new THREE.AmbientLight(0xcccccc, 0.2)
+      var ambientLight = new THREE.AmbientLight(0xcccccc, 0.1)
       scene.add(ambientLight)
-      var pointLight = new THREE.PointLight(0xffffff, 0.6)
+
+      var pointLight = new THREE.PointLight(0xffffff, 0.05)
+      pointLight.position.set(0,10000,0);
       camera.add(pointLight)
+
+      var hemiLight = new THREE.HemisphereLight(0xffffff, 0xa4a7a8,0.8)
+      hemiLight.position.set(0,10000,0);
+      scene.add(hemiLight)
+
+
       scene.add(camera)
       // manager
       function loadModel() {
@@ -83,22 +90,17 @@
         //object
         scene.add(object)
       }
-      // var manager = new THREE.LoadingManager(loadModel)
-      // manager.onProgress = function (item, loaded, total) {
-      //   console.log(item, loaded, total)
-      // }
-
       function onError() {}
       // 加载材质及模型
       new THREE.MTLLoader()
         .setPath('./assets/')
-        .load('car1.mtl', function (materials) {
+        .load('car2.mtl', function (materials) {
           materials.preload()
           new THREE.OBJLoader()
             .setMaterials(materials)
             .setPath('./assets/')
             .load(
-              'car1.obj',
+              'car2.obj',
               function (object) {
                 scene.add(object)
               },
