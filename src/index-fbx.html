@@ -75,7 +75,7 @@
 
       // model
       var loader = new THREE.FBXLoader();
-      loader.load('./assets/car2.fbx', function (object) {
+      loader.load('./assets/car1.fbx', function (object) {
         mixer = new THREE.AnimationMixer(object);
         var action = mixer.clipAction(object.animations[0]);
         action.play();
