@@ -57,7 +57,7 @@
     function init() {
       container = document.createElement('div')
       document.body.appendChild(container)
-      // 摄像头
+      // 摄像机
       camera = new THREE.PerspectiveCamera(
         45,
         window.innerWidth / window.innerHeight,
@@ -89,13 +89,13 @@
       // 加载材质及模型
       new THREE.MTLLoader()
         .setPath('./assets/')
-        .load('1.mtl', function (materials) {
+        .load('car1.mtl', function (materials) {
           materials.preload()
           new THREE.OBJLoader()
             .setMaterials(materials)
             .setPath('./assets/')
             .load(
-              '1.obj',
+              'car1.obj',
               function (object) {
                 scene.add(object)
               },
