@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
+    父页面
     <iframe src="http://10.0.2.188:8000/test-iframe.html" id="iframepage" width="100%" height="100%" frameborder="0" scrolling="yes" onLoad="getData"></iframe>
     <script >
-        var iframe = document.getElementById('iframepage');
-        var win = iframe.contentWindow;
         function getData(){
+          var iframe = document.getElementById('iframepage');
+          var win = iframe.contentWindow;
+          console.log("父域发送消息")
           win.postMessage(JSON.stringify({"testSon":"123"}),"*");
-        }
-        win.onmessage = function(e){
+          win.onmessage = function(e){
           e = e || event;
           console.log("从子域获取到的数据",JSON.parse(e.data));
+          }
         }
     </script>
   </body>
