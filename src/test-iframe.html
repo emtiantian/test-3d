@@ -2,13 +2,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>子页面</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     子iframe
-    <button id='button1'>点击传值</button>
+    <button id="buttonSon">点击传值</button>
     <script>
       window.onmessage = function(e){
         e = e || event;
@@ -20,7 +20,7 @@
         //     "age": 18
         // }
       }
-      document.getElementById("button1").click = function(){
+      document.getElementById("button1").onclick = function(){
         console.log('子域发送消息');
         window.parent.postMessage(JSON.stringify({'testFather':'123'}),"*");
       }
