@@ -14,6 +14,8 @@
         document.getElementById("buttonFather").onclick =  function (){
           console.log("父域发送消息")
           var sonWin = document.getElementById('iframepage').contentWindow
+          // 这里最后一个参数* 在真实使用的时候应该替换为 授信的地址
+          // 参考 https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage
           sonWin.postMessage(JSON.stringify({"testSon":"123"}),"*");
         }
         window.onmessage = function(e){
