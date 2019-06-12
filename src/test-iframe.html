@@ -12,6 +12,9 @@
     <script>
       window.onmessage = function(e){
         e = e || event;
+        // 在接受消息的时候也要判断是否是来源于可信地址
+        // if (event.origin !== "http://example.com:8080")
+        // return;
         console.log("从父域获取到的数据",JSON.parse(e.data));
       }
       document.getElementById("buttonSon").onclick = function(){
