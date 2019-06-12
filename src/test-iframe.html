@@ -12,15 +12,9 @@
     <script>
       window.onmessage = function(e){
         e = e || event;
-        if(e.source!=window.parent) return;
         console.log("从父域获取到的数据",JSON.parse(e.data));
-        // 此处打印的数据为
-        // {
-        //     "name": "hello world!",
-        //     "age": 18
-        // }
       }
-      document.getElementById("button1").onclick = function(){
+      document.getElementById("buttonSon").onclick = function(){
         console.log('子域发送消息');
         window.parent.postMessage(JSON.stringify({'testFather':'123'}),"*");
       }
