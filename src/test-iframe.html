@@ -1,0 +1,24 @@
+!<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    子iframe
+    <script>
+      window.onmessage = function(e){
+        e = e || event;
+        console.log("从父域获取到的数据",JSON.parse(e.data));
+        // 此处打印的数据为
+        // {
+        //     "name": "hello world!",
+        //     "age": 18
+        // }
+      }
+      window.postMessage(JSON.stringify({'testFather':'123'}),"*");
+    </script>
+  </body>
+</html>
