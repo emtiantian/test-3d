@@ -12,7 +12,7 @@
   "author": "hao503106@163.com",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "jquery": "^3.4.1",
     "three.js": "^0.77.1"
   },
